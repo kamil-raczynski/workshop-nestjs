@@ -40,7 +40,7 @@ Project is using postgresSQL database served by `docker`. To run database you ne
 ```bash
 $ docker-compose up -d
 ```
-You are able to connect to database in `adminer` by visiting: `localhost:8080`
+You are able to connect to database in `adminer` by visiting: `localhost:8123`
 
 ## Running the app
 
