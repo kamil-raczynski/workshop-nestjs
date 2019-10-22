@@ -4,12 +4,10 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { TasksModule } from './tasks/tasks.module';
+import { DbModule } from './db/db.module';
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot(),
-    TasksModule
-  ],
+  imports: [TasksModule, DbModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -3,15 +3,22 @@ version: '3.2'
 services:
   db:
     image: postgres:11.1-alpine
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - 5432:5432
+  db-e2e:
+    image: postgres:11.1-alpine
     restart: always
     environment:
       POSTGRES_USER: test
       POSTGRES_DB: test
       POSTGRES_PASSWORD: test
-    ports: 
-      - 5432:5432
-  adminer: 
+    ports:
+      - 5444:5432
+  adminer:
     image: adminer
     restart: always
-    ports: 
+    ports:
       - 8123:8080
